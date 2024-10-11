@@ -1,3 +1,6 @@
+ Assignment-1 comand
+
+
     1  sudo apt update
     4  sudo apt install docker.io -y
     6  sudo docker images
@@ -12,3 +15,52 @@
    18  apt-get install apache2 -y
    19  service apache2 status
    20  service apache2 start
+
+
+
+Assignment-2 comand
+
+
+   19  sudo docker ps
+   20  sudo docker commit ad88c7ca60c6 bash
+   21  sudo docker ps
+   22  sudo docker images
+   23  sudo docker run -itd -p 81:80 --name C1 bash
+   24  sudo docker ps
+   25  sudo docker exec -it 834310e5fca6 bash
+   26  service apache2 status
+   27  service apache2 start
+
+
+Assignment-3
+
+instance-1
+   28  sudo docker tag bash sapnku/image1
+   29  sudo docker images
+   30  sudo docker login
+   31  sudo docker push sapnku/image1
+   32  sudo docker images
+instanche-2
+    1  sudo apt update
+    2  sudo apt install docker.io -y
+    3  sudo docker login
+    7  sudo docker pull sapnku/image1
+    9  sudo docker run -itd -p 80:80 --name C2 sapnku/image1
+   10  sudo docker ps
+   11  sudo docker exec 46e3511f2d97 bash
+   12  sudo docker exec -it 46e3511f2d97 bash
+
+
+Assignment -4
+
+   34  sudo nano Dockerfile
+   35  sudo docker build . -t image2
+   36  sudo docker build . -t image1
+   37  sudo nano Dockerfile
+   38  sudo docker build . -t image2
+   39  sudo docker images
+   40  sudo docker run -itd -p 82:80 --name C3 image2
+   41  sudo docker exec -it 5d728b778b92 bash
+   42  docker ps
+   43  sudo docker ps
+   44  sudo docker exec -it 084b1f5b055f bash
