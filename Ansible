@@ -97,7 +97,7 @@ Assignment -3
   become: true
   hosts: slave1
   roles:
-  - apache
+  - apache2
 - name: executing nginx role for slave2
   become: true
   hosts: slave2
@@ -105,6 +105,52 @@ Assignment -3
   - nginx
 24  ansible-playbook play3.yaml --syntax-check
 30  ansible-playbook play3.yaml    
+
+
+
+Assignment - 4
+
+  131  cd /etc/ansible/roles
+  132  ls
+  133  cd nginx/
+  134  ls
+  135  cd files/
+  136  ls
+  137  sudo nano copy.yaml
+---
+- name: replace default text with custom
+  copy: src=/etc/ansible/roles/nginx/files/index.html dest=/var/www/html
+
+  138  sudo nano index.html
+write anything
+  139  cd ..
+  140  ls
+  141  ce tasks
+  142  cd tasks/
+  143  sudo nano copy.yaml
+  144  ls
+  145  sudo nano main.yml 
+
+- include_tasks: copy.yaml
+
+  146  cd 
+  147  ansible-playbook play3.yaml 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
