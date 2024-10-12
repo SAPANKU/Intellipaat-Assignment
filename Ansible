@@ -1,0 +1,29 @@
+Assignment - 1
+
+master-slave
+    1  sudo apt update
+    2  nano insall.sh
+    3  bash insall.sh
+    5  sudo nano insall.sh 
+    6  bash insall.sh 
+    7  ssh-keygen
+    8  cat /home/ubuntu/.ssh/id_rsa.pub
+       copy the ssh key & pest it to slave1/2 authrized key
+   10  sudo nano /etc/ansible/hosts
+       slave1 ansible_host=172.31.34.137
+       slave2 ansible_host=172.31.46.132  
+   11  ansible -m ping all
+
+slave-1
+
+  1  sudo apt update
+    2  cd .ssh/
+    3  sudo nano authorized_keys 
+       pest master ssh key
+
+Slave-2  1  sudo apt update
+    2  cd .ssh/
+    3  sudo nano authorized_keys 
+       pest master ssh key
+
+
