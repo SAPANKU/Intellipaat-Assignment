@@ -69,9 +69,39 @@ resource "aws_eip_association" "eip_assoc" {
 
 
 
+provider "aws" {
+  alias= "NV"
+  region= "us-east-1"
+  access_key= "AKIAQXUIXSHDYV3Z3PMY"
+  secret_key= "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"
+}
 
+provider "aws" {
+  alias= "Ohio"
+  region= "us-east-2"
+  access_key= "AKIAQXUIXSHDYV3Z3PMY"
+  secret_key= "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"
+}
 
+resource "aws_instance" "assignment-3-1" {
+  provider= aws.NV
+  ami= "ami-005fc0f236362e99f"
+  instance_type= "t2.micro"
+  key_name= "oct-key-pair"
+  tags= {
+  name = "hellow-verginia"
+  }
+}
 
+resource "aws_instance" "assignment-3-2" {
+  provider= aws.Ohio
+  ami= "ami-00eb69d236edcfaf8"
+  instance_type= "t2.micro"
+  key_name= "Key-oct"
+  tags= {
+  name = "hello=ohio"
+  }
+}
 
 
 
