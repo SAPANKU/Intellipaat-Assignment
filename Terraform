@@ -1,0 +1,77 @@
+Assignment -1 
+
+    1  sudo apt update
+    2  sudo nano a.sh
+    3  bah a.sh
+    4  sudo nano a.sh
+    5  bah a.sh
+    6  bash a.sh
+    7  sudo nano main.tf
+
+provider "aws" {
+  region= "us-east-2"
+  access_key= "AKIAQXUIXSHDYV3Z3PMY"
+  secret_key= "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"
+}
+
+resource "aws_instance" "assignment-1" {
+  ami= "ami-00eb69d236edcfaf8"
+  instance_type= "t2.micro"
+  key_name= "Key-oct"
+  tags= {
+  name = "assignment-1"
+  }
+}
+    8  terraform init
+    9  terraform plan
+   10  terraform apply
+   11  history
+
+
+
+Assignment - 2
+
+
+   13  terraform destroy
+   14  sudo nano main.tf
+
+provider "aws" {
+  region= "us-east-2"
+  access_key= "AKIAQXUIXSHDYV3Z3PMY"
+  secret_key= "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"
+}
+
+resource "aws_instance" "assignment-2" {
+  ami= "ami-00eb69d236edcfaf8"
+  instance_type= "t2.micro"
+  key_name= "Key-oct"
+  tags= {
+  name = "assignment-2"
+  }
+}
+
+
+resource "aws_eip" "eip" {
+  vpc=true
+}
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id= aws_instance.assignment-2.id
+  allocation_id= aws_eip.eip.id
+}
+
+   19  terraform init
+   20  terraform plan
+   21  terraform apply
+
+
+
+
+
+
+
+
+
+
+
+
