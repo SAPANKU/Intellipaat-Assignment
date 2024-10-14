@@ -1,0 +1,17 @@
+
+Project-1
+
+---
+- name: task for master
+  hosts: localhost
+  became: true
+  tasks:
+  - name: executing script on master
+    script: mashter.sh
+
+- name: task for slaves
+  hosts: slave
+  became: true
+  tasks:
+  - name: executing script on slaves
+    script: slave.sh
