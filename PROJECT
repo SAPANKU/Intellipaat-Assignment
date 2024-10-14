@@ -1,13 +1,15 @@
 
 Project-1
 
+Play Book Script
+play.yaml
 ---
 - name: task for master
   hosts: localhost
   became: true
   tasks:
   - name: executing script on master
-    script: mashter.sh
+    script: master.sh
 
 - name: task for slaves
   hosts: slave
@@ -15,3 +17,25 @@ Project-1
   tasks:
   - name: executing script on slaves
     script: slave.sh
+
+master.sh
+ sudo apt update 
+sudo apt install openjdk-11-jdk -y
+install jenkins 
+sudo apt-get install jenkins -y
+
+slave.sh
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+sudo apt install docker.io -y
+
+
+
+
+
+
+
+
+
+
+
