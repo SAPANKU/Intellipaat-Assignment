@@ -65,10 +65,11 @@ resource "aws_eip_association" "eip_assoc" {
    21  terraform apply
 
 
+Assignment - 3
 
 
-
-
+   13  terraform destroy
+   14  sudo nano main.tf
 provider "aws" {
   alias= "NV"
   region= "us-east-1"
@@ -102,6 +103,18 @@ resource "aws_instance" "assignment-3-2" {
   name = "hello=ohio"
   }
 }
+
+   19  terraform init
+   20  terraform plan
+   21  terraform apply
+
+
+
+
+
+
+
+
 
 
 
