@@ -1,8 +1,35 @@
 
 Project-1
 
-Play Book Script
-play.yaml
+create 1-master,2-slave instances
+
+
+    1  sudo apt update
+       install ansible  >> create a script file, pest comand & run it.
+    2  sudo nano a.sh
+    3  bash a.sh
+    sudo apt update
+    sudo apt install software-properties-common
+    sudo add-apt-repository --yes --update ppa:ansible/ansible
+    sudo apt install ansible
+   10  bash a.sh
+
+       create ssh-key for access slave
+   11  ssh-keygen
+   12  sudo cat /home/ubuntu/.ssh/id_rsa.pub 
+       copy this key & pest it to both slave instance
+                               slave instance comand
+                               cd .ssh/
+                               ls
+                               sudo nano authorizstion-key    >>>>> pest inside master-ssh-key
+
+      create a slave group inside /etc/ansible/hosts
+   15  sudo nano /etc/ansible/hosts 
+       [slave]
+       privet ip of slave instance
+   16  ansible -m ping all
+
+   17  sudo nano play.yaml
 ---
 - name: task for master
   hosts: localhost
@@ -18,16 +45,24 @@ play.yaml
   - name: executing script on slaves
     script: slave.sh
 
-master.sh
+  18   sudo nano  master.sh
  sudo apt update 
 sudo apt install openjdk-11-jdk -y
 install jenkins 
 sudo apt-get install jenkins -y
 
-slave.sh
+   19  sudo nnao slave.sh
 sudo apt update
 sudo apt install openjdk-11-jdk -y
 sudo apt install docker.io -y
+
+   32  ansible-playbook play.yaml --syntax-check
+   33  ansible-playbook play.yaml --check
+   34  ansible-playbook play.yaml
+   35  sudo jenkins --version
+
+
+
 
 
 
