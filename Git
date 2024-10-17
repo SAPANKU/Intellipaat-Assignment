@@ -1,0 +1,22 @@
+    1  sudo apt update
+    2  mkdir git
+    3  cd git/
+    5  touch code.txt
+    6  ls
+    7  touch log.txt Output.txt
+    8  ls
+    9  git init
+   10  git add code.txt
+   11  git status
+   12  git commit -m "1st commit"
+   13  ls
+   14  git status
+   15  git add Output.txt 
+   16  git commit -m "2nd commit"
+   17  git status
+   18  git remote add origin https://github.com/SAPANKU/Git-assignment.git
+   20  git branch
+   21  git push origin master
+       put git user name
+       give tocken key
+   22  history
