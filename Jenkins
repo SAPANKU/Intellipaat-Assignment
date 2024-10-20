@@ -1,0 +1,12 @@
+JENKINS - 1
+
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+
+
+
+RUN 3 instance, jenkins-master, jenkins-slave-1, jenkins-slave2
+All 3 instance are need t2 medium base
+connect all instance
+Update & install java in all instance
+run a script file & put jenkins install comand in jenkins-master
+copy 
