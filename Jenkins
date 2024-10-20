@@ -9,4 +9,10 @@ All 3 instance are need t2 medium base
 connect all instance
 Update & install java in all instance
 run a script file & put jenkins install comand in jenkins-master
-copy 
+copy public key of master-jenkins & pest it on browser
+copy the jenkins location & show password on jenkins-master & complete signing.
+create a node slave1,  chose the jenkins-slave1 pvt ip, copy the new git url, create tocken access key,
+create a job-1, chose slave1, choese git url & branch, 
+create  slave2 as well as slave1 & choose jenkins-slave2 pvt ip
+create jobe name pushtotprod, pushtotest create webhook, 
+create pipeline, unchck git webhook in pushprod, choose 
