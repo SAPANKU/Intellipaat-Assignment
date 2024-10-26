@@ -54,6 +54,12 @@ instanche-2
 Assignment -4
 
    34  sudo nano Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install apache2 -y
+ADD . /var/www/html
+ENTRYPOINT apachectl -D FOREGROUND
+
    35  sudo docker build . -t image2
    36  sudo docker build . -t image1
    37  sudo nano Dockerfile
@@ -64,3 +70,16 @@ Assignment -4
    42  docker ps
    43  sudo docker ps
    44  sudo docker exec -it 084b1f5b055f bash
+
+Assignment -5
+
+
+   59  sudo nano Dockerfile 
+   60  sudo nano index.html
+   61  sudo nano Dockerfile 
+   62  sudo docker build . -t bash3
+   63  sudo docker run -itd -p 83:80 --name C4 bash3
+   64  sudo docker exec -it C4
+   65  sudo docker exec -it C4 bash
+   66  sudo nano index.html
+   67  sudo nano Dockerfile 
