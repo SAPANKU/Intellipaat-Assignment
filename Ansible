@@ -137,10 +137,48 @@ write anything
   147  ansible-playbook play3.yaml 
 
 
+Assngnment 5
 
+    1  sudo apt update~
+    2  sudo apt update
+    3  ssh-keygen
+    4  cat /home/ubuntu/.ssh/id_rsa.pub
+    5  sudo nano /etc/ansible/hosts
+    6  sudo nano install.sh
+    7  bash install.sh 
+    8  sudo nano install.sh
+    9  bash install.sh 
+   10  sudo nano /etc/ansible/hosts
+[slave1]
+172.31.91.155
+172.31.81.128
+[slave2]
+172.31.92.62
+172.31.91.143
+   18  cd /etc/ansible/roles/
+   19  ls
+   20  sudo ansible-galaxy init java
+   21  ls
+   22  cd java
+   23  ls
+   24  cd tasks
+   25  ls
+   26  install.yaml
+   27  sudo nano install.yaml
 
-
-
+   28  ls
+   29  sudo nano main.yml 
+   30  cd ../../
+   31  sudo ansible-galaxy init mysql
+   32  cd mysql/
+   33  cd tasks/
+   34  sudo nano install.yaml
+   35  ls
+   36  sudo nano main.yml 
+   37  cat install.yaml 
+   38  cd
+   39  ansible-playbook play.yaml --syntax-check
+   40  ansible-playbook play.yaml
 
 
 
