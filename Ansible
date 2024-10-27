@@ -176,16 +176,57 @@ Assngnment 5
    35  ls
    36  sudo nano main.yml 
    37  cat install.yaml 
+
    38  cd
+       sudo nano play.yaml
+
+---
+- name: task for slave1
+  hosts: slave1
+  become: true
+  tasks:
+  - name: uninstall java in slave1
+    apt: name=openjdk-11-jdk state=latest
+- name: task for slave2
+  hosts: slave2
+  become: true
+  tasks:
+  - name: uninstall mysql in slave2
+    apt: name=mysql-server state=latest
+
    39  ansible-playbook play.yaml --syntax-check
    40  ansible-playbook play.yaml
 
 
 
 
+inside yaml file.
 
 
 
+ubuntu@ip-172-31-81-68:~$ cd /etc/ansible/roles/java/tasks/
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/java/tasks$ ls
+install.yaml  main.yml
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/java/tasks$ cat install.yaml 
+---
+- name: installing java
+  apt: name=java state=latest
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/java/tasks$ cat main.yml 
+---
+# tasks file for java
+- include_tasks: install.yaml
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/java/tasks$ cd  
+ubuntu@ip-172-31-81-68:~$ cd /etc/ansible/roles/mysql/tasks/
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/mysql/tasks$ ls
+install.yaml  main.yml
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/mysql/tasks$ cat install.yaml 
+---
+- name: installing mysql
+  apt: name=mysql state=latest
+ubuntu@ip-172-31-81-68:/etc/ansible/roles/mysql/tasks$ cat main.yml 
+---
+# tasks file for mysql
+- include_tasks: install.yaml
 
 
 
