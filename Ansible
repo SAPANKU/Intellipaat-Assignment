@@ -70,8 +70,8 @@ Assignment -3
 
 1   cd /etc/ansible/roles/
 2   sudo ansible-galaxy init apache2
-3   cd /apache2/tasks/
-4   sudo nao index.html
+3   cd apache2/tasks/
+4   sudo nano index.html
 ---
 - name: installing apache2
   apt: name=apache2 state=latest
